@@ -764,7 +764,25 @@ footer a, #footer a {
   .navbar-brand { font-size: 1.2em !important; }
   #messagebuffer { font-size: 0.95em !important; }
 }
+/* ── VIDEO.JS ICONS ── */
+@font-face {
+  font-family: 'VideoJS';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/video.js/7.21.5/font/VideoJS.woff2') format('woff2'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/video.js/7.21.5/font/VideoJS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
+.vjs-icon-placeholder,
+.video-js .vjs-play-control .vjs-icon-placeholder,
+.video-js .vjs-mute-control .vjs-icon-placeholder,
+.video-js .vjs-fullscreen-control .vjs-icon-placeholder,
+.video-js .vjs-volume-menu-button .vjs-icon-placeholder,
+.video-js button.vjs-play-control,
+.video-js button.vjs-mute-control,
+.video-js button.vjs-fullscreen-control {
+  font-family: 'VideoJS' !important;
+}
 /* ══════════════════════════════════════════════════════════
    🕷️  END OF HALLOWEEN 90s CYTUBE THEME
    ══════════════════════════════════════════════════════════ */
