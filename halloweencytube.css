@@ -628,6 +628,8 @@ a:hover {
 /* ── CHANNEL RANK ICONS ── */
 .glyphicon {
   color: var(--orange) !important;
+  font-family: 'Glyphicons Halflings' !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ── TYPOGRAPHY ── */
