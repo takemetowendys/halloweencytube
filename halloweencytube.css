@@ -1,0 +1,762 @@
+/* ============================================================
+   🎃 SPOOKY 90s HALLOWEEN CHANNEL — CyTube Custom Stylesheet
+   ============================================================
+   Vibe: Nickelodeon Halloween special meets GeoCities graveyard
+   Fonts: Creepster (display) + VT323 (monospace/chat)
+   Colors: Pumpkin orange, blood red, poison green, void black
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=VT323&family=Special+Elite&display=swap');
+
+/* ── ROOT VARIABLES ── */
+:root {
+  --black:        #0a0005;
+  --deep-purple:  #110018;
+  --purple-mid:   #2a0040;
+  --orange:       #ff6a00;
+  --orange-glow:  #ff9900;
+  --blood:        #8b0000;
+  --blood-light:  #cc1111;
+  --green:        #39ff14;
+  --green-dim:    #1a7a08;
+  --bone:         #e8dcc8;
+  --ghost:        #c8c0d8;
+  --shadow:       rgba(255, 106, 0, 0.18);
+  --shadow-green: rgba(57, 255, 20, 0.15);
+}
+
+/* ── GLOBAL RESET & BODY ── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black) !important;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(42, 0, 64, 0.9) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(139, 0, 0, 0.4) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='1' cy='1' r='0.7' fill='%23ff9900' opacity='0.08'/%3E%3Ccircle cx='30' cy='15' r='0.5' fill='%23ff6a00' opacity='0.06'/%3E%3Ccircle cx='50' cy='45' r='0.6' fill='%238b0000' opacity='0.07'/%3E%3C/svg%3E") !important;
+  background-size: auto, auto, 60px 60px !important;
+  color: var(--bone) !important;
+  font-family: 'Special Elite', 'Courier New', serif !important;
+  min-height: 100vh;
+  cursor: default;
+}
+
+/* ── SCROLLBARS ── */
+::-webkit-scrollbar { width: 10px; background: var(--deep-purple); }
+::-webkit-scrollbar-track { background: var(--deep-purple); border-left: 1px solid var(--blood); }
+::-webkit-scrollbar-thumb { background: var(--blood); border: 1px solid var(--orange); }
+::-webkit-scrollbar-thumb:hover { background: var(--blood-light); }
+
+/* ── NAVBAR ── */
+.navbar,
+.navbar-default,
+nav.navbar {
+  background: linear-gradient(180deg, #1a0000 0%, #0d0012 60%, transparent 100%) !important;
+  border-bottom: 2px solid var(--blood) !important;
+  box-shadow: 0 4px 24px rgba(139, 0, 0, 0.5), 0 0 8px rgba(255, 106, 0, 0.2) !important;
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 0.05em;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: var(--orange) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1.6em !important;
+  text-shadow: 0 0 12px var(--orange-glow), 0 0 30px rgba(255, 100, 0, 0.4) !important;
+  letter-spacing: 0.08em;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar .nav > li > a {
+  color: var(--ghost) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1.05em !important;
+  letter-spacing: 0.04em;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar .nav > li > a:hover {
+  color: var(--orange) !important;
+  text-shadow: 0 0 10px var(--orange-glow) !important;
+  background: transparent !important;
+}
+
+/* ── MAIN PAGE WRAPPER ── */
+#main-page,
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+/* ── MOTD / CHANNEL HEADER ── */
+#motdwrap,
+#motd {
+  background: linear-gradient(135deg, rgba(17, 0, 24, 0.95) 0%, rgba(26, 0, 0, 0.95) 100%) !important;
+  border: 2px solid var(--blood) !important;
+  border-radius: 0 !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 106, 0, 0.15),
+    0 0 30px rgba(139, 0, 0, 0.3),
+    inset 0 0 40px rgba(0, 0, 0, 0.6) !important;
+  padding: 18px 22px !important;
+  margin-bottom: 16px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+#motdwrap::before,
+#motd::before {
+  content: "🎃";
+  position: absolute;
+  top: 8px; left: 12px;
+  font-size: 1.4em;
+  opacity: 0.5;
+  animation: sway 3s ease-in-out infinite;
+}
+
+#motdwrap::after,
+#motd::after {
+  content: "🕸️";
+  position: absolute;
+  top: 8px; right: 12px;
+  font-size: 1.2em;
+  opacity: 0.4;
+}
+
+#motd h1, #motd h2, #motd h3,
+#motdwrap h1, #motdwrap h2, #motdwrap h3 {
+  font-family: 'Creepster', cursive !important;
+  color: var(--orange) !important;
+  text-shadow: 0 0 16px var(--orange-glow), 0 0 40px rgba(255, 106, 0, 0.3) !important;
+  letter-spacing: 0.06em;
+  margin-top: 0;
+}
+
+#motd p,
+#motdwrap p {
+  color: var(--bone) !important;
+  font-family: 'Special Elite', serif !important;
+  line-height: 1.6;
+}
+
+/* ── VIDEO AREA ── */
+#videowrap,
+#ytapiplayer,
+#videowrap .embed-responsive {
+  border: 2px solid var(--blood) !important;
+  box-shadow:
+    0 0 0 1px rgba(255,106,0,0.1),
+    0 0 40px rgba(139, 0, 0, 0.4),
+    0 6px 30px rgba(0, 0, 0, 0.8) !important;
+  border-radius: 0 !important;
+  background: #000 !important;
+}
+
+#currenttitle {
+  background: rgba(17, 0, 0, 0.9) !important;
+  border: 1px solid var(--blood) !important;
+  border-top: none !important;
+  color: var(--orange) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1.1em !important;
+  letter-spacing: 0.05em;
+  padding: 6px 12px !important;
+  text-shadow: 0 0 8px rgba(255, 106, 0, 0.5);
+}
+
+/* ── CHAT AREA ── */
+#chatwrap {
+  background: transparent !important;
+}
+
+#messagebuffer {
+  background: rgba(10, 0, 5, 0.92) !important;
+  border: 1px solid var(--blood) !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 0 12px rgba(139,0,0,0.2) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1.05em !important;
+  line-height: 1.4 !important;
+  padding: 8px !important;
+}
+
+/* Chat messages */
+.chat-msg-container,
+.chat-msg {
+  border-bottom: 1px solid rgba(139, 0, 0, 0.15) !important;
+  padding: 3px 4px !important;
+  transition: background 0.15s;
+}
+
+.chat-msg-container:hover,
+.chat-msg:hover {
+  background: rgba(42, 0, 64, 0.3) !important;
+}
+
+/* Username colors */
+.username {
+  font-family: 'VT323', monospace !important;
+  font-size: 1.05em !important;
+  font-weight: normal !important;
+  text-shadow: 0 0 6px currentColor !important;
+}
+
+/* Default username glow */
+.chat-msg .username {
+  color: var(--orange) !important;
+}
+
+/* System messages */
+.chat-msg-system .msg,
+.server-msg .msg {
+  color: var(--green) !important;
+  font-style: italic;
+  text-shadow: 0 0 6px rgba(57, 255, 20, 0.4) !important;
+}
+
+/* Message text */
+.chat-msg .msg {
+  color: var(--bone) !important;
+}
+
+/* Chat emotes */
+.channel-emote {
+  max-width: 70px !important;
+  max-height: 70px !important;
+  border: 1px solid rgba(255, 106, 0, 0.2);
+}
+
+/* ── CHAT INPUT ── */
+#chatline,
+#chatline-container,
+.chat-controls {
+  background: rgba(17, 0, 24, 0.95) !important;
+  border: 1px solid var(--blood) !important;
+  border-top: none !important;
+}
+
+#chatline input[type="text"],
+#chatline-msg,
+#chat-msg-input {
+  background: rgba(10, 0, 5, 0.9) !important;
+  border: 1px solid var(--purple-mid) !important;
+  border-radius: 0 !important;
+  color: var(--bone) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1.05em !important;
+  padding: 6px 10px !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#chatline input[type="text"]:focus,
+#chat-msg-input:focus {
+  border-color: var(--blood) !important;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.4), 0 0 4px rgba(255, 106, 0, 0.2) !important;
+  outline: none !important;
+}
+
+#chatline button,
+.chat-controls button {
+  background: linear-gradient(180deg, var(--blood) 0%, #5a0000 100%) !important;
+  border: 1px solid var(--blood-light) !important;
+  border-radius: 0 !important;
+  color: var(--bone) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1em !important;
+  letter-spacing: 0.04em;
+  padding: 6px 14px !important;
+  text-shadow: none !important;
+  transition: background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+#chatline button:hover,
+.chat-controls button:hover {
+  background: linear-gradient(180deg, var(--blood-light) 0%, var(--blood) 100%) !important;
+  box-shadow: 0 0 10px rgba(204, 17, 17, 0.5) !important;
+}
+
+/* ── USER LIST ── */
+#userlist-wrap,
+#userlistwrap {
+  background: rgba(10, 0, 5, 0.92) !important;
+  border: 1px solid var(--blood) !important;
+  border-radius: 0 !important;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.4) !important;
+}
+
+#userlist-title,
+#userlistwrap h4 {
+  background: linear-gradient(90deg, rgba(139,0,0,0.6), transparent) !important;
+  color: var(--orange) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1.1em !important;
+  letter-spacing: 0.06em;
+  padding: 6px 10px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--blood) !important;
+  text-shadow: 0 0 8px rgba(255, 106, 0, 0.4);
+}
+
+.userlist_item {
+  color: var(--ghost) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1em !important;
+  padding: 3px 8px !important;
+  transition: background 0.15s, color 0.15s;
+  border-bottom: 1px solid rgba(42, 0, 64, 0.4) !important;
+}
+
+.userlist_item:hover {
+  background: rgba(42, 0, 64, 0.5) !important;
+  color: var(--orange) !important;
+}
+
+.userlist_owner { color: var(--orange) !important; text-shadow: 0 0 8px rgba(255,106,0,0.5) !important; }
+.userlist_op    { color: var(--blood-light) !important; text-shadow: 0 0 6px rgba(204,17,17,0.4) !important; }
+.userlist_admin { color: var(--green) !important; text-shadow: 0 0 6px rgba(57,255,20,0.4) !important; }
+
+/* ── PLAYLIST ── */
+#playlistwrap,
+#playlist-controls,
+#plcontrol {
+  background: rgba(10, 0, 5, 0.9) !important;
+  border: 1px solid var(--blood) !important;
+  border-radius: 0 !important;
+}
+
+#playlist-title,
+#playlistwrap h4 {
+  background: linear-gradient(90deg, rgba(139,0,0,0.6), transparent) !important;
+  color: var(--orange) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1.1em !important;
+  letter-spacing: 0.06em;
+  padding: 6px 10px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--blood) !important;
+  text-shadow: 0 0 8px rgba(255, 106, 0, 0.4);
+}
+
+.queue_entry,
+.queue-entry {
+  background: rgba(17, 0, 0, 0.7) !important;
+  border-bottom: 1px solid rgba(139, 0, 0, 0.25) !important;
+  color: var(--ghost) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1em !important;
+  transition: background 0.15s;
+}
+
+.queue_entry:hover,
+.queue-entry:hover {
+  background: rgba(42, 0, 64, 0.5) !important;
+}
+
+.queue_entry.active,
+.queue-entry.active,
+.queue_entry.playing,
+.queue-entry.playing {
+  background: linear-gradient(90deg, rgba(139,0,0,0.4), rgba(42,0,64,0.3)) !important;
+  border-left: 3px solid var(--orange) !important;
+  color: var(--orange) !important;
+  text-shadow: 0 0 6px rgba(255, 106, 0, 0.3);
+}
+
+/* ── BUTTONS (global) ── */
+.btn,
+button {
+  border-radius: 0 !important;
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 0.04em;
+  transition: all 0.2s !important;
+}
+
+.btn-default {
+  background: linear-gradient(180deg, #2a0040 0%, #180028 100%) !important;
+  border: 1px solid var(--purple-mid) !important;
+  color: var(--bone) !important;
+}
+.btn-default:hover {
+  background: linear-gradient(180deg, #3a0060 0%, #2a0040 100%) !important;
+  border-color: var(--orange) !important;
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.3) !important;
+  color: var(--orange) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--blood-light) 0%, var(--blood) 100%) !important;
+  border: 1px solid var(--blood-light) !important;
+  color: var(--bone) !important;
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, #ff2222 0%, var(--blood-light) 100%) !important;
+  box-shadow: 0 0 12px rgba(204, 17, 17, 0.5) !important;
+}
+
+.btn-success {
+  background: linear-gradient(180deg, var(--green-dim) 0%, #0d4004 100%) !important;
+  border: 1px solid var(--green-dim) !important;
+  color: var(--bone) !important;
+}
+.btn-success:hover {
+  background: linear-gradient(180deg, #2aa010 0%, var(--green-dim) 100%) !important;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3) !important;
+}
+
+.btn-danger {
+  background: linear-gradient(180deg, #5a0000 0%, #2a0000 100%) !important;
+  border: 1px solid var(--blood) !important;
+  color: #ff8888 !important;
+}
+.btn-danger:hover {
+  background: linear-gradient(180deg, var(--blood) 0%, #5a0000 100%) !important;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.5) !important;
+}
+
+/* ── DROPDOWNS ── */
+.dropdown-menu {
+  background: rgba(17, 0, 24, 0.97) !important;
+  border: 1px solid var(--blood) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.7), 0 0 12px rgba(139,0,0,0.3) !important;
+}
+
+.dropdown-menu > li > a {
+  color: var(--ghost) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1em !important;
+  letter-spacing: 0.03em;
+  padding: 6px 16px !important;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background: rgba(139, 0, 0, 0.4) !important;
+  color: var(--orange) !important;
+}
+
+.dropdown-menu > .active > a {
+  background: rgba(139, 0, 0, 0.5) !important;
+  color: var(--orange) !important;
+}
+
+/* ── MODALS ── */
+.modal-content {
+  background: rgba(17, 0, 24, 0.98) !important;
+  border: 2px solid var(--blood) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 60px rgba(139, 0, 0, 0.4), 0 0 20px rgba(255, 106, 0, 0.1) !important;
+  color: var(--bone) !important;
+}
+
+.modal-header {
+  background: linear-gradient(90deg, rgba(139,0,0,0.4), transparent) !important;
+  border-bottom: 1px solid var(--blood) !important;
+}
+
+.modal-title {
+  color: var(--orange) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1.4em !important;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 10px rgba(255, 106, 0, 0.4);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--blood) !important;
+  background: rgba(10, 0, 0, 0.3) !important;
+}
+
+.close {
+  color: var(--blood-light) !important;
+  text-shadow: none !important;
+  opacity: 0.8 !important;
+  font-size: 1.4em !important;
+}
+.close:hover { color: var(--orange) !important; opacity: 1 !important; }
+
+/* ── FORM INPUTS ── */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  background: rgba(10, 0, 5, 0.9) !important;
+  border: 1px solid var(--purple-mid) !important;
+  border-radius: 0 !important;
+  color: var(--bone) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 1em !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--blood) !important;
+  box-shadow: 0 0 8px rgba(139, 0, 0, 0.4) !important;
+  outline: none !important;
+  background: rgba(17, 0, 5, 0.95) !important;
+}
+
+label {
+  color: var(--ghost) !important;
+  font-family: 'Creepster', cursive !important;
+  font-size: 1em !important;
+  letter-spacing: 0.04em;
+}
+
+/* ── PANELS / WELLS ── */
+.panel,
+.well {
+  background: rgba(17, 0, 24, 0.8) !important;
+  border: 1px solid var(--blood) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 16px rgba(139, 0, 0, 0.2) !important;
+}
+
+.panel-heading {
+  background: linear-gradient(90deg, rgba(139,0,0,0.5), rgba(42,0,64,0.5)) !important;
+  border-bottom: 1px solid var(--blood) !important;
+  color: var(--orange) !important;
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 0.05em;
+  border-radius: 0 !important;
+}
+
+.panel-body {
+  color: var(--bone) !important;
+}
+
+/* ── TABS ── */
+.nav-tabs {
+  border-bottom: 2px solid var(--blood) !important;
+}
+
+.nav-tabs > li > a {
+  background: rgba(17, 0, 0, 0.7) !important;
+  border: 1px solid var(--blood) !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  color: var(--ghost) !important;
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 0.04em;
+  margin-right: 2px;
+  transition: all 0.2s;
+}
+
+.nav-tabs > li > a:hover {
+  background: rgba(42, 0, 64, 0.7) !important;
+  color: var(--orange) !important;
+  border-color: var(--blood) !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover {
+  background: linear-gradient(180deg, rgba(139,0,0,0.5), rgba(17,0,24,0.9)) !important;
+  border-color: var(--blood) !important;
+  border-bottom-color: transparent !important;
+  color: var(--orange) !important;
+}
+
+.tab-content {
+  background: rgba(10, 0, 5, 0.8) !important;
+  border: 1px solid var(--blood) !important;
+  border-top: none !important;
+  padding: 12px !important;
+}
+
+/* ── ALERTS ── */
+.alert {
+  border-radius: 0 !important;
+  font-family: 'Special Elite', serif !important;
+}
+
+.alert-info {
+  background: rgba(42, 0, 64, 0.7) !important;
+  border: 1px solid #5a008a !important;
+  color: var(--ghost) !important;
+}
+
+.alert-danger, .alert-error {
+  background: rgba(139, 0, 0, 0.4) !important;
+  border: 1px solid var(--blood-light) !important;
+  color: #ffaaaa !important;
+}
+
+.alert-success {
+  background: rgba(26, 122, 8, 0.3) !important;
+  border: 1px solid var(--green-dim) !important;
+  color: #aaffaa !important;
+}
+
+.alert-warning {
+  background: rgba(100, 60, 0, 0.4) !important;
+  border: 1px solid var(--orange) !important;
+  color: var(--orange-glow) !important;
+}
+
+/* ── LINKS ── */
+a, a:visited {
+  color: var(--orange) !important;
+  text-decoration: none !important;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+a:hover {
+  color: var(--orange-glow) !important;
+  text-shadow: 0 0 8px rgba(255, 153, 0, 0.5) !important;
+  text-decoration: none !important;
+}
+
+/* ── CHANNEL RANK ICONS ── */
+.glyphicon {
+  color: var(--orange) !important;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--orange) !important;
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 12px rgba(255, 106, 0, 0.3);
+}
+
+p, li, td, th, span {
+  font-family: 'Special Elite', serif !important;
+  color: var(--bone);
+}
+
+/* ── PROGRESS BARS ── */
+.progress {
+  background: rgba(17, 0, 24, 0.8) !important;
+  border: 1px solid var(--blood) !important;
+  border-radius: 0 !important;
+  height: 8px !important;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--blood), var(--orange)) !important;
+  border-radius: 0 !important;
+  box-shadow: 0 0 6px rgba(255, 106, 0, 0.4) !important;
+}
+
+/* ── VOLUME / PLAYER CONTROLS ── */
+#videocontrols,
+#player-controls {
+  background: rgba(17, 0, 0, 0.85) !important;
+  border: 1px solid var(--blood) !important;
+  border-top: none !important;
+}
+
+/* ── DIVIDERS ── */
+hr {
+  border-color: var(--blood) !important;
+  border-top-width: 1px !important;
+  opacity: 0.5;
+}
+
+/* ── FLICKER ANIMATION (optional glow pulse) ── */
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.85; }
+  97% { opacity: 1; }
+  98% { opacity: 0.75; }
+  99% { opacity: 0.95; }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@keyframes ghostFloat {
+  0%, 100% { transform: translateY(0px); opacity: 0.5; }
+  50% { transform: translateY(-6px); opacity: 0.7; }
+}
+
+@keyframes scanline {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* ── CRT SCANLINE OVERLAY on the video ── */
+#videowrap::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.07) 2px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+#videowrap {
+  position: relative;
+}
+
+/* ── FLICKER ON CHANNEL TITLE ── */
+#currenttitle {
+  animation: flicker 8s infinite;
+}
+
+/* ── FOOTER ── */
+footer,
+#footer {
+  background: rgba(10, 0, 5, 0.9) !important;
+  border-top: 1px solid var(--blood) !important;
+  color: rgba(139, 0, 0, 0.6) !important;
+  font-family: 'VT323', monospace !important;
+  font-size: 0.9em !important;
+  padding: 8px 16px !important;
+  text-align: center;
+}
+
+footer a, #footer a {
+  color: rgba(255, 106, 0, 0.5) !important;
+}
+
+/* ── PILL BADGES ── */
+.badge {
+  background: var(--blood) !important;
+  border-radius: 0 !important;
+  font-family: 'VT323', monospace !important;
+}
+
+/* ── POLL AREA ── */
+#pollcontainer,
+.poll-container {
+  background: rgba(17, 0, 24, 0.85) !important;
+  border: 1px solid var(--blood) !important;
+}
+
+.poll-option {
+  color: var(--bone) !important;
+  font-family: 'Special Elite', serif !important;
+}
+
+/* ── RESPONSIVE TWEAKS ── */
+@media (max-width: 768px) {
+  #main-page { padding: 6px !important; }
+  .navbar-brand { font-size: 1.2em !important; }
+  #messagebuffer { font-size: 0.95em !important; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   🕷️  END OF HALLOWEEN 90s CYTUBE THEME
+   ══════════════════════════════════════════════════════════ */
